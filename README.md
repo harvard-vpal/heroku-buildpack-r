@@ -3,7 +3,7 @@
 This is a [Heroku buildpack](https://devcenter.heroku.com/articles/buildpacks) for applications which use
 [R](https://www.r-project.org/) for statistical computing and [CRAN](https://cran.r-project.org/) for R packages.
 
-The master branch of this repository contains the canonical version of the buildpack for use by IQSS/VPAL-R. The upstream branch is [virtualstaticvoid/heroku-buildpack-r.git#heroku-16-packrat](https://github.com/virtualstaticvoid/heroku-buildpack-r/tree/heroku-16-packrat).
+The master branch of this repository contains the canonical version of the buildpack for use by IQSS/VPAL-R.
 
 ## Usage
 
@@ -68,13 +68,13 @@ To reference a specific version of the buildpack, add the Git branch or tag name
 E.g. Replace `branch_or_tag_name` with the desired branch or tag name:
 
 ```
-$ heroku create --stack heroku-16 \
+$ heroku create --stack heroku-18 \
     --buildpack https://github.com/harvard-vpal/heroku-buildpack-r.git#branch_or_tag_name
 ```
 
 ### Buildpack Binaries
 
-The binaries used by the buildpack are hosted on AWS S3 at [https://heroku-buildpack-r.s3.amazonaws.com](https://heroku-buildpack-r.s3.amazonaws.com).
+The binaries used by the buildpack are hosted on AWS S3 at [https://heroku-r-buildpack.s3.amazonaws.com](https://heroku-r-buildpack.s3.amazonaws.com).
 
 See the [heroku-buildpack-r-build](https://github.com/virtualstaticvoid/heroku-buildpack-r-build) repository for building the R binaries yourself.
 
