@@ -186,8 +186,8 @@ topic "Vendoring R $R_VERSION for $STACK stack ($BUILD_PACK_VERSION)"
 pushd $BUILD_DIR > /dev/null
 
 # key error
-fakechroot fakeroot chroot $CHROOT_DIR apt-get install add-apt-key
-fakechroot fakeroot chroot $CHROOT_DIR add-apt-key --keyserver keyserver.ubuntu.com 51716619E084DAB9
+apt-get install add-apt-key
+add-apt-key --keyserver keyserver.ubuntu.com 51716619E084DAB9
 
 # check cache
 CACHE_KEY="$STACK-$R_VERSION-$BUILD_PACK_VERSION.tar.gz"
