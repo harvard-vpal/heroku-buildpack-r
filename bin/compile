@@ -185,6 +185,10 @@ topic "Vendoring R $R_VERSION for $STACK stack ($BUILD_PACK_VERSION)"
 
 pushd $BUILD_DIR > /dev/null
 
+# key error
+fakechroot fakeroot chroot $CHROOT_DIR apt-get install add-apt-key
+fakechroot fakeroot chroot $CHROOT_DIR add-apt-key --keyserver keyserver.ubuntu.com 51716619E084DAB9
+
 # check cache
 CACHE_KEY="$STACK-$R_VERSION-$BUILD_PACK_VERSION.tar.gz"
 if [[ -f "$CACHE_DIR/$CACHE_KEY" ]]; then
@@ -296,7 +300,7 @@ if [[ ! -z "$INIT_FILE" ]]; then
   # Debug
   fakechroot fakeroot chroot $CHROOT_DIR \
     ls -ll /usr/lib/x86_64-linux-gnu/
-      
+
   # execute the init wrapper
   # working directory must be /app so that provided packages/scripts can be found
   fakechroot fakeroot chroot $CHROOT_DIR \
